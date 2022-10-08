@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <title>Piedra, papel o tijera</title>
     <script>
+        function randomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
         let jugador = 0
-        let pc = 2
+        let pc = randomNumber(1, 3)
 
         const jugadorEscoge = () => {
             if (jugador == 1) {
@@ -33,12 +37,12 @@
         const todosEscogen = () => {
             jugador = prompt("Escoge: 1 piedra, 2 papel o 3 tijera")
             jugadorEscoge()
-            if(jugador == "1" ||jugador == "2" || jugador == "3" ) {
-              pcEscoge()  
+            if (jugador == "1" || jugador == "2" || jugador == "3") {
+                pcEscoge()
             } else {
                 todosEscogen()
             }
-            
+
         }
         const combate = () => {
             if (pc == jugador) {
@@ -55,6 +59,7 @@
                 alert("Ganaste")
             }
         }
+
         // 1 piedra, 2 papel, 3 tijera
         todosEscogen()
 
