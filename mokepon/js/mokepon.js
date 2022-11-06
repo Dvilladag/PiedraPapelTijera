@@ -13,6 +13,7 @@ let selectedPetPlayer = "";
 let selectedPetEnemy = "";
 let selectedAttackPlayer = "";
 let selectedAttackEnemy = "";
+let attackResult = "";
 
 //functions
 function randomNumber(min, max) {
@@ -56,7 +57,16 @@ function selectAttackEnemy() {
 	} else {
 		selectedAttackEnemy = "Ground 🌿";
 	}
-	alert("Enemy selected " + selectedAttackEnemy);
+}
+function createMessage() {
+	clash()
+	const newMessage = document.createElement("p");
+	const newContent = document.createTextNode(
+		`Your pet attacked with ${selectedAttackPlayer}, the pet of the enemy attacked with ${selectedAttackEnemy}, ${attackResult}`
+	)
+	newMessage.appendChild(newContent);
+	const currentP = document.getElementById("messages");
+	currentP.appendChild(newMessage);
 }
 function setAttack(attack) {
 	alert("You selected " + attack);
@@ -65,14 +75,39 @@ function setAttack(attack) {
 function clickFireButton() {
 	setAttack("Fire🔥");
 	selectAttackEnemy();
+	createMessage();
 }
 function clickWatterButton() {
 	setAttack("Watter 💧");
 	selectAttackEnemy();
+	createMessage();
 }
 function clickGroundButton() {
 	setAttack("Ground 🌿");
 	selectAttackEnemy();
+	createMessage();
+}
+function clash() {
+	if (selectedAttackPlayer === selectedAttackEnemy) {
+		attackResult = "It's a Tie";
+	} else if (
+		selectedAttackPlayer === "Fire 🔥" &&
+		selectedAttackEnemy === "Watter 💧"
+	) {
+		attackResult = "You lose";
+	} else if (
+		selectedAttackPlayer === "Watter 💧" &&
+		selectedAttackEnemy === "Ground 🌿"
+	) {
+		attackResult = "You lose";
+	} else if (
+		selectedAttackPlayer === "Ground 🌿" &&
+		selectedAttackEnemy === "Fire 🔥"
+	) {
+		attackResult = "You lose";
+	} else {
+		attackResult = "You win";
+	}
 }
 
 //ejecuciones
@@ -81,4 +116,3 @@ buttonPetPlayer.addEventListener("click", selectPetPlayer);
 buttonFire.addEventListener("click", clickFireButton);
 buttonWatter.addEventListener("click", clickWatterButton);
 buttonGround.addEventListener("click", clickGroundButton);
-
