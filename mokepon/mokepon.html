@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
-	</head>
-	<body>
-		<h1>Mokepon! 🔥💧🌿</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Mokepon! 🔥💧🌿</h1>
 
-		<section id="select-pet">
-			<h2>Select your pet:</h2>
-			<ul style="list-style-type: none">
-				<li>
-					<input type="radio" name="pet" id="jubub" />
-					<label for="jubub">Jubub</label>
-				</li>
-				<li>
-					<input type="radio" name="pet" id="lordvill" />
-					<label for="lordvill">Lordvill</label>
-				</li>
-				<li>
-					<input type="radio" name="pet" id="hunter" />
-					<label for="hunter">Hunter</label>
-				</li>
-				<!-- <li>
+    <section id="select-pet">
+      <h2>Select your pet:</h2>
+      <ul style="list-style-type: none">
+        <li>
+          <input type="radio" name="pet" id="jubub" />
+          <label for="jubub">Jubub</label>
+        </li>
+        <li>
+          <input type="radio" name="pet" id="lordvill" />
+          <label for="lordvill">Lordvill</label>
+        </li>
+        <li>
+          <input type="radio" name="pet" id="hunter" />
+          <label for="hunter">Hunter</label>
+        </li>
+        <!-- <li>
 					<input type="radio" name="pet" id="jafigueo" />
 					<label for="jafigueo">Jafigueo</label>
 				</li>
@@ -36,40 +36,41 @@
 					<input type="radio" name="pet" id="hudalo" />
 					<label for="hudalo">Hudalo</label>
 				</li> -->
-			</ul>
+      </ul>
 
-			<!-- Jubub -> Fire Lordvill -> Water Hunter -> Ground Jafigueo -> Water and
+      <!-- Jubub -> Fire Lordvill -> Water Hunter -> Ground Jafigueo -> Water and
 			Ground Danievo -> Water and Fire Hudalo -> Ground and Fire 
 		-->
 
-			<button id="button-pet-player">Select</button>
-		</section>
+      <button id="button-pet-player">Select</button>
+    </section>
 
-		<section id="select-attack">
-			<h2>Select your attack:</h2>
+    <section id="select-attack">
+      <h2>Select your attack:</h2>
 
-			<ul style="list-style-type: none">
-				<li><button id="button-fire">Fire 🔥</button></li>
-				<li><button id="button-watter">Watter 💧</button></li>
-				<li><button id="button-ground">Ground 🌿</button></li>
-			</ul>
-		</section>
+      <ul style="list-style-type: none">
+        <li><button id="button-fire">Fire 🔥</button></li>
+        <li><button id="button-watter">Watter 💧</button></li>
+        <li><button id="button-ground">Ground 🌿</button></li>
+      </ul>
+    </section>
+	
+    <p>
+      Your pet <span id="pet-player"></span> has
+      <span id="lives-player">3 </span> lives.
+    </p>
+    <p>
+      The pet <span id="pet-enemy"></span>of the enemy has
+      <span id="lives-enemy">3</span> lives.
+    </p>
 
-		<p>Your pet <span id="pet-player"></span> has <span>3 </span> lives.</p>
-		<p>
-			The pet <span id="pet-enemy"></span>of the enemy has <span>3</span> lives.
-		</p>
+    <section id="messages">
+      
+    </section>
 
-		<section id="messages">
-			<!-- <p> 
-				Your pet attacked with FIRE🔥, the pet of the enemy attacked with GROUND🌿 -
-				You Win🙌
-			</p> -->
-		</section>
-
-		<section id="restart">
-			<button id="button-restart">Restart</button>
-		</section>
-		<script src="./js/mokepon.js"></script>
-	</body>
+    <section id="restart">
+      <button id="button-restart">Restart</button>
+    </section>
+    <script src="./js/mokepon.js"></script>
+  </body>
 </html>
